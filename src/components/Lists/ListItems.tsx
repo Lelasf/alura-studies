@@ -1,24 +1,17 @@
+import { ITask } from "../../types/task";
 import style from "./ListItems.module.scss";
 
-export default function ListItems() {
-  const tasks = [
-    {
-      task: "React",
-      time: "02:00:00",
-    },
-    {
-      task: "Javascript",
-      time: "01:00:00",
-    },
-  ];
+export default function ListItems({
+  task,
+  time,
+  selected,
+  completed,
+  id,
+}: ITask) {
   return (
-    <ul>
-      {tasks.map((item, index) => (
-        <li key={index} className={style.item}>
-          <h3>{item.task}</h3>
-          <span>{item.time}</span>
-        </li>
-      ))}
-    </ul>
+    <li className={style.item}>
+      <h3>{task}</h3>
+      <span>{time}</span>
+    </li>
   );
 }
