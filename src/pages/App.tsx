@@ -7,12 +7,28 @@ import { ITask } from "../types/task";
 
 function App() {
   const [tasks, setTasks] = useState<ITask[] | []>([]);
+  const [selected, setSelected] = useState<ITask>();
+  // const [completed, setCompleted] = useState();
+
+  function selectTask(selectedTask: ITask) {
+    setSelected(selectedTask);
+    setTasks((previousTasks) =>
+      previousTasks.map((task) => ({
+        ...task,
+        selected: task.id === selectedTask.id ? true : false,
+      }))
+    );
+  }
+
+  // function completeTask(completedTask: ITask) {
+  //   setCompleted(completedTask);
+  // }
 
   return (
     <div className={style.AppStyle}>
       <Form setTasks={setTasks} />
-      <List tasks={tasks} />
-      <Chronometer />
+      <List tasks={tasks} selectTask={selectTask} />
+      <Chronometer selected={selected}/>
     </div>
   );
 }
