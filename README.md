@@ -1,3 +1,7 @@
+# alura-studies
+
+Projeto feito com base no curso de React com Typescript da formação alura "Gerencie aplicações React com Typescript"
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -49,6 +53,4 @@ export default tseslint.config({
 });
 ```
 
-# alura-studies
 
-Projeto feito com base no curso de react com typescript da alura "Gerencie aplicações React com Typescript"
